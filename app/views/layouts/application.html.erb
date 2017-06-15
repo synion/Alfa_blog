@@ -7,17 +7,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <ol type = "*">
-    <% flash.each do |name,msg| %>
-      <h2><%= name %></h2>
-          <% msg.each do |full_msg| %>
-            <li><%= full_msg %></li>
-          <% end %>
-    <% end %>
-  </ol>
-
   <body>
-    <%= yield %>
+  <%= render "layouts/shared/menu" %>
+  <%= render "layouts/shared/messages" %>
+    <div class= "container-fluid" >
+      <%= yield %>
+    </div>
+  <%= render "layouts/shared/footer" %>
   </body>
 </html>

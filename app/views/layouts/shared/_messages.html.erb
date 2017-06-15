@@ -1,0 +1,8 @@
+<ol type = "*">
+  <% flash.each do |name,msg| %>
+    <h2><%= name %></h2>
+    <% msg.each do |full_msg| %>
+      <li><%= full_msg %></li>
+    <% end %>
+  <% end %>
+</ol>
