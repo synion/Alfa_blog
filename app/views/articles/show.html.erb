@@ -5,3 +5,6 @@
 <h3>description:</h3>
   <%= @article.description %>
 </pre>
+<%= link_to "Back to all articles", articles_path %> |
+<%= link_to "Edit article", edit_article_path(@article) %> |
+<%= link_to "Delete article", article_path(@article), method: :delete, data: {confirm: "Are you sure"} %>
