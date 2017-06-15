@@ -1,4 +1,4 @@
-<h1> thats me </h1>
+<h1> Listing of all Articles </h1>
 <% @articles.each do |article| %>
   <pre>
   title:
@@ -9,4 +9,5 @@
     <%= link_to "Show article", article_path(article) %>
     <%= link_to "Delete article", article_path(article), method: :delete, data: {confirm: "Are you sure"} %>
 <% end %><br />
-<%= button_to "Create new article", new_article_path, method: :get %>
+<%= button_to "Create new article", new_article_path, method: :get %> |
+<%= link_to "Home", root_path %>
