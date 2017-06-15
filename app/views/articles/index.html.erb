@@ -1,0 +1,10 @@
+<h1> thats me </h1>
+<% @articles.each do |article| %>
+  <pre>
+  title:
+    <%= article.title %>
+  description:
+    <%= article.description %></pre>
+    <%= link_to "Edit article", edit_article_path(article) %>
+<% end %>
+<%= link_to "Create new article", new_article_path %>
