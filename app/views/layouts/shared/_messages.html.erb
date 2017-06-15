@@ -1,8 +1,16 @@
-<ol type = "*">
+<div class="container">
   <% flash.each do |name,msg| %>
-    <h2><%= name %></h2>
-    <% msg.each do |full_msg| %>
-      <li><%= full_msg %></li>
-    <% end %>
+
+    <div class="row">
+      <div class= "col-sm-offset-4 col-sm-4">
+        <h2 class= "<%= name %>" ><%= name.upcase %></h2>
+      </div>
+    </div>
+    <ol >
+      <% msg.each do |full_msg| %>
+        <li class= "<%= name %>"><%= full_msg %></li>
+      <% end %>
+    </ol>
   <% end %>
-</ol>
+</div>
+

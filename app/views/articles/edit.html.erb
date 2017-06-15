@@ -1,5 +1,6 @@
 <h1> Edit article </h1>
-<%= render "articles/shared/form_for_article" %>
-<%= link_to "Back to all articles", articles_path %>
-<%= link_to "Show article", article_path(@article) %>
+<%= render "articles/shared/form_for_article" %><br />
+<div class="col-sm-offset-4 col-sm-4">
+  <%= link_to "Show article", article_path(@article), class: "center" %>
+</div>
 
