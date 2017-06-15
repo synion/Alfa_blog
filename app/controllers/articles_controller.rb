@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Artcile was sucesfull created"
+      flash[:notice] = ["Artcile was sucesfull created"]
       redirect_to @article
     else
       flash[:errors] = @article.errors.full_messages
@@ -29,8 +29,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    if @article.update
-      flash[:notice] = "Article was succesful update"
+    if @article.update(article_params)
+      flash[:notice] = ["Article was succesful update"]
       redirect_to @article
     else
       flash[:errors] = @article.errors.full_messages
