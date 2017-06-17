@@ -13,6 +13,9 @@
             <%= link_to "Edit article", edit_article_path(article), class: "btn  btn-success btn-xs" %>
             <%= link_to "Delete article", article_path(article), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger btn-xs" %>
         </div>
+        <div class="aritcle-meta-createby">
+          <small><%= article.user.name + ', ' if article.user %> (created_at: <%= article.created_at %> , updated_at: <%= article.updated_at %> )</small>
+        </div>
       </div>
     </div>
   </div>
