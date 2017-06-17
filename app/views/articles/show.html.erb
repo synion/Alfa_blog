@@ -1,10 +1,16 @@
-<h1> The article : </h1>
-<pre>
-<h2>title:</h2>
-  <%= @article.title %>
-<h2>description:</h2>
-  <%= @article.description %>
-</pre>
-<%= link_to "Back to all articles", articles_path %> |
-<%= link_to "Edit article", edit_article_path(@article) %> |
-<%= link_to "Delete article", article_path(@article), method: :delete, data: {confirm: "Are you sure"} %>
+<div class= "center">
+  <strong><h2 class="text-uppercase" >title:<span class="bg-info text-uppercase center"><%= @article.title %></span></h2>
+  </strong>
+  <div class= "well col-sm-offset-2 col-sm-8" >
+    <h3 class= "text-uppercase">description:</h3>
+    <span class="bg-info  text-left "><%= simple_format(@article.description) %></span>
+  </div>
+  <div class="col-sm-offset-2 col-sm-8">
+    <div class="article-actions">
+      <%= link_to "Back to all articles", articles_path, class: "btn btn-default" %> |
+      <%= link_to "Edit article", edit_article_path(@article), class: "btn  btn-success" %> |
+      <%= link_to "Delete article", article_path(@article), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+

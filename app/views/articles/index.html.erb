@@ -1,13 +1,24 @@
-<h1> Listing of all Articles </h1>
-<% @articles.each do |article| %>
-  <pre>
-  title:
-    <%= article.title %>
-  description:
-    <%= article.description %></pre>
-    <%= link_to "Edit article", edit_article_path(article) %> |
-    <%= link_to "Show article", article_path(article) %>
-    <%= link_to "Delete article", article_path(article), method: :delete, data: {confirm: "Are you sure"} %>
-<% end %><br />
-<%= button_to "Create new article", new_article_path, method: :get %> |
-<%= link_to "Home", root_path %>
+<h1 class="center"> Listing of all Articles </h1>
+  <% @articles.each do |article| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="article-title">
+          <%= link_to article.title, article_path(article), class: "text-primer"%>
+        </div>
+        <div class="article-body">
+          <%= truncate(article.description, length:100) %>
+        </div>
+        <div class="article-actions">
+            <%= link_to "Edit article", edit_article_path(article), class: "btn  btn-success btn-xs" %>
+            <%= link_to "Delete article", article_path(article), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger btn-xs" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+
+
+<%= link_to "Create new article", new_article_path, method: :get, class: "btn btn-default" %> |
+<%= link_to "Home", root_path, class: "btn btn-default " %>
