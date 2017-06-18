@@ -1,0 +1,31 @@
+<h1 class="center">Sign up</h1>
+<%= render 'shared/messages', obj: @user %>
+<%= form_for(@user, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <div class="row">
+    <div class="form-group">
+      <%= f.label :name, class: "col-sm-2 control-label" %>
+      <div class="col-sm-8">
+        <%= f.text_field :name, class: "form-control", placeholder: "Your name", autofocus: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, class: "col-sm-2 control-label" %>
+      <div class="col-sm-8">
+        <%= f.email_field :email, class: "form-control", placeholder: "Your email", autofocus: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, class: "col-sm-2 control-label" %>
+      <div class="col-sm-8">
+        <%= f.password_field :password, class: "form-control", placeholder: "Password better > 6 digits" %>
+      </div>
+    </div>
+    <div class="col-sm-offset-2 col-sm-8">
+      <%= f.submit "Sign Up", class: "btn btn-primary btn-xlg" %>
+    </div>
+  </div>
+<% end %> <br />
+<div class="col-sm-offset-4 col-sm-4">
+  [ <%= link_to "Cancel and back to see all articles", articles_path %> ]
+</div>
+

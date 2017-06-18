@@ -1,3 +1,5 @@
+<h1 class="center">Create new Article </h1>
+<%= render 'shared/messages', obj: @article %>
 <%= form_for(@article, html: { class: "form-horizontal" }) do |f| %>
   <div class="row">
     <div class="form-group">
@@ -20,4 +22,4 @@
 <div class="col-sm-offset-4 col-sm-4">
   [ <%= link_to "Cancel and back to see all articles", articles_path %> ]
 </div>
-
+m

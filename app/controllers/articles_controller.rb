@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
       flash[:notice] = ["Artcile was sucesfull created"]
       redirect_to @article
     else
-      flash[:errors] = @article.errors.full_messages
       render 'new'
     end
   end
@@ -31,14 +30,12 @@ class ArticlesController < ApplicationController
       flash[:notice] = ["Article was succesful update"]
       redirect_to @article
     else
-      flash[:errors] = @article.errors.full_messages
       render 'edit'
     end
   end
 
   def destroy
     @article.destroy
-    flash[:notice] = ["You delete article"]
     redirect_to articles_path
   end
 
