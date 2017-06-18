@@ -1,4 +1,4 @@
-<h1 class="center">Sign up</h1>
+
 <%= render 'shared/messages', obj: @user %>
 <%= form_for(@user, html: { class: "form-horizontal", role: "form" }) do |f| %>
   <div class="row">
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="col-sm-offset-2 col-sm-8">
-      <%= f.submit "Sign Up", class: "btn btn-primary btn-xlg" %>
+      <%= f.submit(@user.new_record? ? "Sign Up" : "Udpate accout" , class: "btn btn-primary btn-xlg") %>
     </div>
   </div>
 <% end %> <br />
