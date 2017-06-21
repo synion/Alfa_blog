@@ -1,5 +1,6 @@
 <h1 class="center"> Listing of all Articles </h1>
-<%= render 'articles', articles: @articles %>
-
-<%= link_to "Create new article", new_article_path, method: :get, class: "btn btn-default" %> |
-<%= link_to "Home", root_path, class: "btn btn-default " %>
+<div align="center">
+  <%= render 'articles', articles: @articles %>
+  <%= link_to "Create new article", new_article_path, method: :get, class: "btn btn-default" %> |
+  <%= link_to "Home", root_path, class: "btn btn-default " %>
+</div>
