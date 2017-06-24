@@ -1,16 +1,13 @@
 <div class="container">
   <% flash.each do |name,msg| %>
-
     <div class="row">
-      <div class= "col-sm-offset-4 col-sm-4">
-        <h2 class= "<%= name %>" ><%= name.upcase %></h2>
+      <div class= "col-sm-offset-2 col-sm-8">
+        <div class="alert alert-<%= name %>" alert-dismissable">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <h4><strong><%= name.upcase %></strong> <small><%= msg %></small></h4>
+        </div>
       </div>
     </div>
-    <ol >
-      <% msg.each do |full_msg| %>
-        <li class= "<%= name %>"><%= full_msg %></li>
-      <% end %>
-    </ol>
   <% end %>
 </div>
 

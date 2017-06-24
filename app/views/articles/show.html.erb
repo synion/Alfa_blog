@@ -20,9 +20,11 @@
   <% end %>
   <div class="col-sm-offset-2 col-sm-8">
     <div class="article-actions">
-      <%= link_to "Back to all articles", articles_path, class: "btn btn-default" %> |
-      <%= link_to "Edit article", edit_article_path(@article), class: "btn  btn-success" %> |
-      <%= link_to "Delete article", article_path(@article), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+      <%= link_to "Back to all articles", articles_path, class: "btn btn-default" %>
+      <% if logged_in? && current_user == @article.user %>
+        <%= link_to "Edit article", edit_article_path(@article), class: "btn  btn-success" %>
+        <%= link_to "Delete article", article_path(@article), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+      <% end %>
     </div>
   </div>
 </div>
