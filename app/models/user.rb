@@ -7,7 +7,7 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class User < ApplicationRecord
-  has_many :articles
+  has_many :articles, dependent: :destroy
   before_save { self.email = email.downcase }
   validates :email, presence: true, uniqueness: true, email: true
   validates :name,  presence: true, uniqueness: { case_sensitive: false },
