@@ -1,0 +1,15 @@
+<h1 align="center"> Listning All Categories </h1>
+<div align="center">
+  <%= will_paginate %>
+    <% @categories.each do |category| %>
+      <div class="row", align="center">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="well well-lg">
+            <%= link_to category.name, category_path(category) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <%= will_paginate %>
+</div>
+
